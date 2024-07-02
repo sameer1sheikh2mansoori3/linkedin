@@ -1,11 +1,22 @@
-import Image from "next/image";
+import Feed from "@/components/Feed";
+import News from "@/components/News";
+import Sidebar from "@/components/Sidebar";
+import { currentUser } from "@clerk/nextjs/server";
 
-export default function Home() {
+
+export default async function Home() {
+
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-
-
-
-    </main>
+    <div className="pt-20">
+      <div className="max-w-6xl mx-auto flex justify-between gap-8">
+        {/* Sidebar  */}
+        <Sidebar />
+        {/* Feed  */}
+        <Feed />
+        {/* News  */}
+        <News />
+      </div>
+    </div>
   );
 }
