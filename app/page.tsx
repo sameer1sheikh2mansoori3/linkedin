@@ -1,11 +1,13 @@
 import Feed from "@/components/Feed";
 import News from "@/components/News";
 import Sidebar from "@/components/Sidebar";
+import { useUser } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 
 
 export default async function Home() {
 
+  const user = await currentUser()
 
   return (
     <div className="pt-20">
@@ -13,7 +15,7 @@ export default async function Home() {
         {/* Sidebar  */}
         <Sidebar />
         {/* Feed  */}
-        <Feed />
+        <Feed user={user} />
         {/* News  */}
         <News />
       </div>

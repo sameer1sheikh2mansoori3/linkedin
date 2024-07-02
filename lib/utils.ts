@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const readFileUrl = (file: File | Blob) => {
+export const readFileAsDataUrl = (file: File | Blob) => {
   return new Promise((resolve) => {
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
